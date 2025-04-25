@@ -617,4 +617,102 @@
   </script>
  
 
+<div class="onboarding-modal modal fade animated" id="modal_notification" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+  
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Báo Lấp Lánh Ánh Kim</title>
+    <style>
+
+
+        .shimmer-text:hover {
+            text-shadow: 0 0 20px gold, 0 0 30px white;
+        }
+
+        .bell-icon {
+            font-size: 24px; /* Kích thước chuông như ban đầu */
+            animation: colorChange 1s infinite alternate, shake 0.5s infinite;
+        }
+
+        @keyframes colorChange {
+            0% { color: red; }
+            100% { color: white; }
+        }
+
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(-5deg); }
+            75% { transform: rotate(2deg); }
+            100% { transform: rotate(0deg); }
+     
+        }
+    </style>
+
+
+
+<h5 class="modal-title">
+    <i class="fa-solid fa-bell bell-icon"></i>
+    <span class="shimmer-text">Thông báo</span>
+</h5>
+
+
+
+
+
+
+            </div>
+                <div class="modal-body">
+                     <div><strong><span style="font-family:Arial,Helvetica,sans-serif">Hãy nhớ luôn</span> đọc kĩ ghi chú của Admin!!!</strong></div>
+
+<div><strong>Người dùng lưu ý!</strong><strong>!</strong></div>
+
+<p><strong>- </strong></p>
+
+<p><strong>- Source trên web này hoàn toàn miễn phí nên anh em không nên mang đi bán/lùa gà nếu bị phát hiện sẽ bị ban ip vv!</strong></p>
+
+<p><strong>- Luôn lưu lại Source/Tài khoản sau khi mua hàng</strong></p>
+
+<p><strong>- Facebook hỗ trợ<a href="https://www.facebook.com/longhip7730">Hoàng Long</a></strong></p>
+
+<p><strong>- Admin chỉ có thể hỗ trợ các bạn từ 11h-12h30 trưa và từ 7h-8h30 tối!</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-sm" id="dontShowAgainBtn" data-dismiss="modal"><i class="fa-solid fa-eye-slash"></i> Không hiển thị lại</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal"><i class="fa-solid fa-xmark"></i> Đóng</button>
+                </div>
+        </div>
+    </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var modal = document.getElementById('modal_notification');
+    var dontShowAgainBtn = document.getElementById('dontShowAgainBtn');
+    var modalClosedTime = localStorage.getItem('modalClosedTime');
+
+    // Nếu modalClosedTime chưa được lưu hoặc đã quá 2 giờ, hiển thị modal
+    if (!modalClosedTime || (Date.now() - parseInt(modalClosedTime) > 2 * 60 * 60 * 1000)) {
+        var bootstrapModal = new bootstrap.Modal(modal);
+        bootstrapModal.show();
+    }
+
+    // Lưu thời gian khi modal được đóng khi người dùng click vào nút "Không hiển thị lại" và ẩn modal
+    dontShowAgainBtn.addEventListener('click', function() {
+        localStorage.setItem('modalClosedTime', Date.now());
+        var bootstrapModal = bootstrap.Modal.getInstance(modal);
+        bootstrapModal.hide();
+    });
+});
+</script>
+
+
+
+
+              </div>
+                
 </body></html>
